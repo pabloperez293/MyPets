@@ -39,9 +39,11 @@ enlaces.forEach( (element ) => {
     });
 });
 // Clase activada
+
 // SCroll Efects
 
 let prevScrollPos = window.pageYOffset;
+let goTop = document.querySelector(".up");
 
 window.onscroll = () => {
     let currenScrollPos = window.pageYOffset;
@@ -59,9 +61,28 @@ window.onscroll = () => {
     prevScrollPos = currenScrollPos;
     
     //scroll estilos
-    let up  = window.pageYOffset;
+    let arriba  = window.pageYOffset;
 
-    if (up <= 600){
+    if (arriba <= 600){
+        containerMenu.style.borderBottom = "none";
+
+        up.style.right = "-100%";
         
+    }else{
+        containerMenu.style.borderBottom = "4px solid #4F98CA";
+
+        up.style.right = "0";
+        up.style.transition = "0.5s";
     }
 }
+goTop.addEventListener("click", () =>{
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+
+let verAbajo = document.querySelector("#abajo");
+
+verAbajo.addEventListener("click", () => {
+    document.body.scrollTop = 600;
+    document.documentElement.scrollTop = 600;
+})
