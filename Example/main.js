@@ -42,3 +42,26 @@ enlaces.forEach( (element ) => {
 // SCroll Efects
 
 let prevScrollPos = window.pageYOffset;
+
+window.onscroll = () => {
+    let currenScrollPos = window.pageYOffset;
+
+    // menu muestra o no muestra
+    if (prevScrollPos > currenScrollPos) {
+        containerMenu.style.top = "0";
+        containerMenu.style.transition = "0.5s";
+
+    }else{
+        containerMenu.style.top = "-60px";
+        containerMenu.style.transition = "0.5s";
+    }
+
+    prevScrollPos = currenScrollPos;
+    
+    //scroll estilos
+    let up  = window.pageYOffset;
+
+    if (up <= 600){
+        
+    }
+}
