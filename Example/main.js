@@ -34,8 +34,7 @@ enlaces.forEach( (element ) => {
             link.classList.remove("activo");
 
         });
-
-        event.target.classList,add("activo");
+        event.target.classList.add("activo");
     });
 });
 // Clase activada
@@ -43,9 +42,10 @@ enlaces.forEach( (element ) => {
 // SCroll Efects
 
 let prevScrollPos = window.pageYOffset;
-let goTop = document.querySelector(".up");
+let goTop = document.querySelector(".arriba");
 
 window.onscroll = () => {
+
     let currenScrollPos = window.pageYOffset;
 
     // menu muestra o no muestra
@@ -66,13 +66,13 @@ window.onscroll = () => {
     if (arriba <= 600){
         containerMenu.style.borderBottom = "none";
 
-        up.style.right = "-100%";
+        goTop.style.right = "-100%";
         
     }else{
         containerMenu.style.borderBottom = "4px solid #4F98CA";
 
-        up.style.right = "0";
-        up.style.transition = "0.5s";
+        goTop.style.right = "0";
+        goTop.style.transition = "0.5s";
     }
 }
 goTop.addEventListener("click", () =>{
